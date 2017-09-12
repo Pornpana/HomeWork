@@ -1,6 +1,6 @@
 package th.ac.utcc.cpe.pornpana;
 
-public class bublble {
+public class bublble { // 5907401003 พรพนา ขำดวง
 private double [] el ;
 private int esize ;
 

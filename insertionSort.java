@@ -1,66 +1,66 @@
 package th.ac.utcc.cpe.pornpana;
+/**
+ * @5907401003 �þ�� �Ӵǧ
+ */
 
 public class insertionSort {
-	private int [] el ;
-	private int esize ;
 
+	private int [] element ;
+	private int eSize ;
+	public insertionSort(int size){
+		if(size < 0)
+			this.element = new int[size];
+	else
+		this.element = new int [10];
+		eSize = 0;
+	}
 
-	public insertionSort (int size){ // 5907401003 พรพนา ขำดวง
-		if(size > 0 ) 
-			this.el = new int[size] ;
-		else 
-			this.el = new int[10];
-		
-		esize = 0 ;
-		
+	public void insert(int e){
+		this.element[eSize] = e ;
+			eSize++ ;
 	}
-	public  void insert(int e){
-		this.el[esize] = e ;
-		esize++;
-		
-	}
+
 	public void show(){
-		for(int i = 0 ; i < esize ; i++){
-			System.out.print(this.el[i]+ " ");
-			
+		for(int i =0 ; i < eSize ; i++){
+			System.out.print(this.element[i]+" // ");
 		}
-		System.out.print(" ");
+			System.out.println(" ");
 	}
-	public void insertionSorts(){
-		
-		int out,in,temp;
-		for(out = 1 ;out < esize ;out++){
-			temp =  this.el[out];
-			for(in = out;in > 0 && this.el[in-1] >= temp; in--){
-				this.el[in]= this.el[in-1];
-			}
-			this.el[in]=temp ;
-		}
-	}
-		/*
-		 private void  swap(int le , int ri){
-			double temp = this.el[le];
-			this.el[le] = this.el[ri];
-			this.el[ri] = temp ;
-		}
-		*/
-		
-		public static void main(String[]args){
-			int max = 20 ;
-			insertionSort insertion = new insertionSort(max) ;
-			insertion.insert(3);
-			insertion.insert(38);
-			insertion.insert(44);
-			insertion.insert(5);
-			insertion.insert(47);
-			insertion.insert(15);
 
-			
-			System.out.println("Original Order ::");
-			insertion.show();
-			insertion.insertionSorts();
-			System.out.println("\nSorced order ::");
-			insertion.show();
-			
+	public void insertionSort(){
+		int out, in, temp ;
+	for(out = 1; out<eSize; out++){
+		temp = this.element[out];
+		for(in  = out ; in> 0 && this.element[in-1]>= temp ; in--){
+			this.element[in]=this.element[in-1];
+			}
+		this.element[in]= temp;
 		}
+	}
+	
+	private void swap(int left , int right){
+			int temp = this.element[left];
+			this.element[left] = this.element[right] ;
+			this.element[right] = temp ;
+
 }
+
+	public static void main (String[] args){
+		int max = 20 ;
+		insertionSort Algor = new insertionSort(max);
+				Algor.insert(87);
+				Algor.insert(43);
+				Algor.insert(95);
+				Algor.insert(32);
+				Algor.insert(91);
+				Algor.insert(78);
+				Algor.insert(26);
+				Algor.insert(12);
+	System.out.print("Original Order insertion : ");
+	Algor.show();
+		Algor.insertionSort();
+	System.out.print("Sorted Order: ");
+	Algor.show();
+	}
+}
+
